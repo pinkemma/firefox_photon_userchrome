@@ -7,6 +7,9 @@ To further bring it back to Photon and tweaks that makes the user interface more
 
 This repo is mostly here for my own storage, but if you like what you see, use it, don't complain when it doesn't work for you (or make small prs to bring in fixes).
 
+## It looks like this
+![Image](./custom_firefox.png)
+
 ## Changes
 * Tabs, not buttons!
 * Tabs are tweaked to be smaller
