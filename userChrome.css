@@ -5723,7 +5723,7 @@ menupopup:is(#context_sendTabToDevicePopupMenu, #context-sendpagetodevice-popup)
 /** Change colour of url input to white **/
 #urlbar-input-container {
   background: white;
-  border: 1px solid #d0d0d0 !important;
+  border: 1px solid #d0d0d0 !important;  
 }
 
 /** Add border to the url input **/
@@ -5756,52 +5756,45 @@ menupopup:is(#context_sendTabToDevicePopupMenu, #context-sendpagetodevice-popup)
   border-radius: 0px;
   fill: red;
   color: black;
-  background: white;
+  background: white;  
 }
 
 /** Make the tabs wider due to the mute button being in the way */
 
 .tabbrowser-tab {
-  min-width: 7em !important;
+  min-width: 7em !important;  
 }
  
 /** Fix faded out tabs **/
 .tabbrowser-tab:is([pending]) .tab-text { 
-  opacity: 1.0 !important;; 
+  opacity: 1.0 !important;  
 }
 
 /** Better mute button */
 .tab-icon-overlay {
-  margin-top: 6px;
+  margin-top: 6px;  
 }
 
 /* Find where background is overriden with !important ... */
 .tab-icon-overlay:not([pinned], [sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]):hover {  
-  background-color: black !important;  
-}
-
-.tab-icon-overlay:is([soundplaying]) {
-  background: red;  
+  background-color: black !important;    
 }
 
 .tab-icon-overlay:not([pinned], [sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {  
   left: 0px; 
   border: 0px solid #101010;
-  border-radius: 3px;  
+  border-radius: 3px;    
   background-color: #7060ff;
   width: 18px;
   height: 18px;  
-  fill: white;
+  fill: white;  
 }
 
 
 /** Readjust text when on a tab with media playing */
 .tab-icon-stack:not([pinned], [sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {  
-  margin-right: -5px;
+  margin-right: -5px;      
 }
- 
-
-
 
 /** Fix dading out colour **/
 .tabbrowser-tab > .tab-stack > .tab-content  {
@@ -5819,6 +5812,7 @@ menupopup:is(#context_sendTabToDevicePopupMenu, #context-sendpagetodevice-popup)
 
 .tab-text {
   padding-left: 4px;
+  padding-top: 1px;
 }
 
 .tab-icon-stack {  
@@ -5826,14 +5820,13 @@ menupopup:is(#context_sendTabToDevicePopupMenu, #context-sendpagetodevice-popup)
 }
  
 /** Fixes colours in the tabs **/
-/** Not needed any more? **/
 .tab-label-container {
 	color: black;
 }
 
 /** Changes the font colour of unselected tabs to white **/
 .tabbrowser-tab:not([visuallyselected], [multiselected], [selected]) .tab-label-container {
-  color: white !important;  
+  color: white !important;    
 }
 
 /** Changes the colour of the close button to black **/
@@ -5846,40 +5839,42 @@ menupopup:is(#context_sendTabToDevicePopupMenu, #context-sendpagetodevice-popup)
   background: white;
   border-width: 1px !important;
   border-style: solid !important; 
-  border-color: #C0C0C0 !important;
+  border-color: #C0C0C0 !important;  
 }
 
 /** Fixes the close button being black, not white */
 .titlebar-close {
-  color: white !important;  
+  color: white !important;    
 }
 
 /** The close icon hover effect **/
 .close-icon:hover {
   color: white !important;
   fill: white !important;  
-  background: rgb(255, 60, 60)!important;
+  background: rgb(255, 60, 60)!important;  
 }
 
 /** Show the sound playing icon when a tab is playing sound **/
 .tab-icon-stack {
   background-image: url("chrome://global/skin/icons/radio.svg") !important;  
-  color: black;
+  color: black;  
 }
 
 /** Makes sure the sound playing icon is visible when it isn't the active tab **/
 .tab-icon-stack:not([selected]) {
-  color: white;
+  color: white;  
 }
 
 /** We need a little bit of padding to center the playing sound icon **/
-.tab-icon-stack:is([soundplaying]) {
-  padding-top: 5px;    
+.tab-icon-stack:is([soundplaying],[muted]) {
+  padding-top: 5px;
+  /** Padding to make sound playing tabs match non-sound playing tabs **/
+  padding-right: 17px;
 }
 
 /** Hides the icon of websites that is playing sound to better show the playing icon **/
-.tab-icon-stack:is([soundplaying]) .tab-icon-image {
-   display: none;  
+.tab-icon-stack:is([soundplaying],[muted]) .tab-icon-image {
+   display: none;      
 }
 
 .tab-content::after {
@@ -5891,8 +5886,8 @@ menupopup:is(#context_sendTabToDevicePopupMenu, #context-sendpagetodevice-popup)
     left: 0;
     background: var(--identity-icon-color);
     content: '';
-    margin: 0 var(--inline-tab-padding);
-  }
+    margin: 0 var(--inline-tab-padding);  
+}
   
   :root[uidensity="compact"] .tab-content::after {
     bottom: 3px;
@@ -5924,5 +5919,5 @@ html#main-window menupopup {
 
 /** Make the minimize, maximize, and close buttons small **/
 .titlebar-button {
-  width: 25px;
+  width: 25px;  
 }
